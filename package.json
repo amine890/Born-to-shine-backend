@@ -1,7 +1,7 @@
 {
   "name": "born-to-shine",
   "version": "1.0.0",
-  "description": "Born To Shine E-commerce",
+  "description": "Born To Shine E-commerce API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
