@@ -136,8 +136,14 @@ function initializeData() {
 initializeData();
 
 // ==================== ROUTES - HTML PAGES ====================
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'store.html')));
-app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'admin.html')));
+//app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'store.html')));
+//app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'admin.html')));
+// ✅ API-only server - Frontend is hosted on Netlify
+app.get('/', (req, res) => res.json({ 
+    message: 'Born To Shine API Server', 
+    status: 'running',
+    frontend: 'https://born-to-shine.netlify.app'
+}));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', time: new Date().toISOString() }));
 
 // ==================== ROUTES - CATEGORIES ====================
